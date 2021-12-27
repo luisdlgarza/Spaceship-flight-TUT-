@@ -15,6 +15,9 @@ public class ShipController : MonoBehaviour
     private float rollinput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
 
+    public GameObject laser_prefab;
+    public Transform firepoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,12 @@ public class ShipController : MonoBehaviour
 
         transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
         transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject go = GameObject.Instantiate(laser_prefab, firepoint.position, firepoint.rotation* Quaternion.Euler(0f,0,0)) as GameObject;
+            GameObject.Destroy(go, 3f);
+        }
 
     }
 }
