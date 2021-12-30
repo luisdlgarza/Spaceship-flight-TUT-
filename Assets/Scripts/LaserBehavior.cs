@@ -9,6 +9,8 @@ public class LaserBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.position -= transform.forward * Time.deltaTime * 1000f;
+
     }
 }
