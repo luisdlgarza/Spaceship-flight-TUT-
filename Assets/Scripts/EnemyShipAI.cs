@@ -37,7 +37,7 @@ public class EnemyShipAI : MonoBehaviour
         if (dist <= minRangefromPlayer)
         {
 
-           // ShootPlayer();
+            ShootPlayer();
         }
         else
         {
@@ -45,10 +45,10 @@ public class EnemyShipAI : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ShootPlayer();
-        }
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    ShootPlayer();
+        //}
     }
 
 
